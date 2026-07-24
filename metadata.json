@@ -1,0 +1,6 @@
+{
+  "name": "FreeFolio React Portfolio",
+  "description": "Deepa V - Front-End Developer Portfolio built with React, TypeScript, and Tailwind CSS featuring resume integration, interactive project gallery, skills progress, and clean responsive layout.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

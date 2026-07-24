@@ -13,7 +13,7 @@ export const Certification = () => {
   const certifications = [
     {
       id: "c1",
-      title: "Junior English Typing ",
+      title: "Junior English Typing",
       icon: <Award className="w-10 h-10 text-amber-500" />,
       description:
         "Successfully completed Junior English Typewriting with First Class and Distinction.",
@@ -68,22 +68,23 @@ export const Certification = () => {
   return (
     <section
       id="certification"
-      className="py-20 bg-gray-50/50"
+      className="py-16 sm:py-20 bg-gray-50/50 overflow-hidden"
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-                {/* Header */}
-        <div className="relative flex items-center justify-center mb-16 select-none">
-          <h1 className="text-6xl sm:text-8xl md:text-9xl font-black uppercase text-stroke-bg tracking-widest text-center">
-            Certification
+
+        {/* Header */}
+        <div className="relative flex items-center justify-center mb-12 sm:mb-16 select-none">
+          <h1 className="text-5xl sm:text-7xl md:text-8xl lg:text-9xl font-black uppercase text-stroke-bg tracking-widest text-center pointer-events-none">
+           certificate
           </h1>
 
-          <h2 className="absolute text-2xl sm:text-4xl font-bold uppercase text-[#0BCEAF] tracking-wider">
+          <h2 className="absolute text-xl sm:text-3xl md:text-4xl font-bold uppercase text-[#0BCEAF] tracking-wider text-center">
             My Certifications
           </h2>
         </div>
 
-        {/* Section Heading */}
-        <div className="flex items-center gap-3 mb-8 border-b-2 border-[#0BCEAF] pb-2 inline-flex">
+        {/* Section Title */}
+        <div className="flex items-center gap-3 mb-8 border-b-2 border-[#0BCEAF] pb-2 w-fit">
           <Award className="w-7 h-7 text-[#0BCEAF]" />
 
           <h3 className="text-2xl sm:text-3xl font-bold text-gray-800">
@@ -92,26 +93,26 @@ export const Certification = () => {
         </div>
 
         {/* Cards */}
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+        <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 lg:gap-8">
           {certifications.map((item) => (
             <div
               key={item.id}
-              className="bg-white rounded-2xl border border-gray-200 shadow-sm hover:shadow-xl transition-all duration-300 p-8 group"
+              className="bg-white rounded-2xl border border-gray-200 shadow-sm hover:shadow-xl hover:-translate-y-2 transition-all duration-300 p-5 sm:p-6 lg:p-8 group"
             >
               {/* Icon */}
-              <div className="mb-6 flex justify-center">
-                <div className="w-20 h-20 rounded-2xl bg-gradient-to-br from-cyan-50 to-cyan-100 border border-cyan-200 flex items-center justify-center shadow-sm group-hover:scale-110 transition duration-300">
+              <div className="flex justify-center mb-6">
+                <div className="w-16 h-16 sm:w-20 sm:h-20 rounded-2xl bg-gradient-to-br from-cyan-50 to-cyan-100 border border-cyan-200 flex items-center justify-center shadow-sm group-hover:scale-110 transition duration-300">
                   {item.icon}
                 </div>
               </div>
 
               {/* Title */}
-              <h3 className="text-xl font-bold text-center text-gray-800 mb-4 group-hover:text-[#0BCEAF] transition-colors">
+              <h3 className="text-lg sm:text-xl font-bold text-center text-gray-800 mb-4 group-hover:text-[#0BCEAF] transition-colors duration-300">
                 {item.title}
               </h3>
 
               {/* Description */}
-              <p className="text-gray-600 text-center leading-relaxed mb-6">
+              <p className="text-sm sm:text-base text-gray-600 text-center leading-relaxed mb-6">
                 {item.description}
               </p>
 
@@ -119,7 +120,7 @@ export const Certification = () => {
               <div className="flex justify-center">
                 <button
                   onClick={() => setActiveModal(item)}
-                  className="px-5 py-2 rounded-lg bg-[#0BCEAF] text-white font-medium hover:bg-[#089e86] transition"
+                  className="px-6 py-2.5 rounded-lg bg-[#0BCEAF] text-white font-semibold hover:bg-[#089e86] transition duration-300"
                 >
                   Read More →
                 </button>
@@ -127,120 +128,49 @@ export const Certification = () => {
             </div>
           ))}
         </div>
-
       </div>
-            {/* Modal */}
+            {/* Responsive Modal */}
       {activeModal && (
         <div
           className="fixed inset-0 z-50 flex items-center justify-center bg-black/60 backdrop-blur-sm p-4"
           onClick={() => setActiveModal(null)}
         >
           <div
-            className="bg-white rounded-2xl shadow-2xl max-w-xl w-full p-8 relative animate-in fade-in zoom-in duration-300"
             onClick={(e) => e.stopPropagation()}
+            className="relative w-full max-w-[95%] sm:max-w-lg lg:max-w-xl max-h-[90vh] overflow-y-auto rounded-2xl bg-white shadow-2xl p-5 sm:p-6 lg:p-8"
           >
             {/* Close Button */}
             <button
               onClick={() => setActiveModal(null)}
-              className="absolute top-4 right-4 p-2 rounded-full hover:bg-gray-100 transition"
+              className="absolute top-4 right-4 rounded-full p-2 hover:bg-gray-100 transition"
             >
               <X className="w-6 h-6 text-gray-500" />
             </button>
 
-            {/* Icon + Title */}
-            <div className="flex items-center gap-4 mb-6">
-              <div className="w-16 h-16 rounded-2xl bg-gradient-to-br from-cyan-50 to-cyan-100 border border-cyan-200 flex items-center justify-center">
+            {/* Icon & Title */}
+            <div className="flex flex-col sm:flex-row items-center sm:items-start gap-4 mb-6 text-center sm:text-left">
+              <div className="w-16 h-16 rounded-xl bg-gradient-to-r from-[#0BCEAF] to-cyan-200 flex items-center justify-center shadow-lg shrink-0">
                 {activeModal.icon}
               </div>
 
-              <h3 className="text-2xl font-bold text-gray-800">
-                {activeModal.title}
-              </h3>
-            </div>
+              <div>
+                <h3 className="text-xl sm:text-2xl font-bold text-gray-800">
+                  {activeModal.title}
+                </h3>
 
-            {/* Details */}
-            <p className="text-gray-600 leading-7 mb-6">
-              {activeModal.fullDetails}
-            </p>
-
-            {/* Provider & Year */}
-            <div className="border-t pt-5 space-y-3">
-              <p>
-                <span className="font-semibold text-gray-800">
-                  Provider :
-                </span>{" "}
-                <span className="text-[#0BCEAF]">
+                <p className="text-sm text-[#0BCEAF] font-semibold mt-1">
                   {activeModal.provider}
-                </span>
-              </p>
-
-              <p>
-                <span className="font-semibold text-gray-800">
-                  Year :
-                </span>{" "}
-                <span className="text-gray-600">
-                  {activeModal.year}
-                </span>
-              </p>
-            </div>
-
-            {/* Buttons */}
-            <div className="mt-8 flex justify-between items-center">
-              <a
-                href={activeModal.certificate}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="px-5 py-2 rounded-lg bg-[#0BCEAF] text-white font-medium hover:bg-[#089e86] transition"
-              >
-                View Certificate →
-              </a>
-
-              <button
-                onClick={() => setActiveModal(null)}
-                className="px-5 py-2 rounded-lg border border-gray-300 text-gray-700 hover:bg-gray-100 transition"
-              >
-                Close
-              </button>
-            </div>
-          </div>
-        </div>
-      )}
-            {/* Modal */}
-      {activeModal && (
-        <div
-          className="fixed inset-0 z-50 flex items-center justify-center bg-black/60 backdrop-blur-sm p-4"
-          onClick={() => setActiveModal(null)}
-        >
-          <div
-            className="bg-white rounded-2xl shadow-2xl max-w-xl w-full p-8 relative animate-in fade-in zoom-in duration-300"
-            onClick={(e) => e.stopPropagation()}
-          >
-            {/* Close Button */}
-            <button
-              onClick={() => setActiveModal(null)}
-              className="absolute top-4 right-4 p-2 rounded-full hover:bg-gray-100 transition"
-            >
-              <X className="w-6 h-6 text-gray-500" />
-            </button>
-
-            {/* Icon + Title */}
-            <div className="flex items-center gap-4 mb-6">
-              <div className="w-16 h-16 rounded-xl bg-gradient-to-r from-[#0BCEAF] to-cyan-200 flex items-center justify-center shadow-lg">
-                {activeModal.icon}
+                </p>
               </div>
-
-              <h3 className="text-2xl font-bold text-gray-800">
-                {activeModal.title}
-              </h3>
             </div>
 
             {/* Details */}
-            <p className="text-gray-600 leading-relaxed mb-6">
+            <p className="text-sm sm:text-base text-gray-600 leading-7 mb-6">
               {activeModal.fullDetails}
             </p>
 
             {/* Provider */}
-            <div className="mb-3">
+            <div className="mb-4 text-sm sm:text-base break-words">
               <span className="font-semibold text-gray-800">
                 Provider :
               </span>{" "}
@@ -250,7 +180,7 @@ export const Certification = () => {
             </div>
 
             {/* Year */}
-            <div className="mb-6">
+            <div className="mb-6 text-sm sm:text-base">
               <span className="font-semibold text-gray-800">
                 Year :
               </span>{" "}
@@ -259,23 +189,20 @@ export const Certification = () => {
               </span>
             </div>
 
-            {/* View Certificate 
-            <div className="mt-6 flex justify-center">
+            {/* Certificate Button */}
+            <div className="flex flex-col sm:flex-row justify-between gap-4 mt-8">
               <a
                 href={activeModal.certificate}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="px-6 py-3 rounded-lg bg-[#0BCEAF] text-white font-semibold hover:bg-[#089e86] transition-all duration-300 shadow-md"
+                className="w-full sm:w-auto text-center px-6 py-3 rounded-full bg-[#0BCEAF] text-white font-semibold hover:bg-[#089e86] transition"
               >
-                View Certificate →
+                View Certificate
               </a>
-            </div>*/}
 
-            {/* Close */}
-            <div className="mt-8 flex justify-end">
               <button
                 onClick={() => setActiveModal(null)}
-                className="px-6 py-2 rounded-full bg-gray-800 text-white hover:bg-black transition"
+                className="w-full sm:w-auto px-6 py-3 rounded-full bg-gray-800 text-white hover:bg-black transition"
               >
                 Close
               </button>

@@ -42,7 +42,8 @@ const educationList = [
     institution:
       "GOVERNMENT GIRLS HIGHER SECONDARY SCHOOL, KARAIKUDI",
     period: "2019 - 2020",
-    description: "Passed with 73.8% across core curriculum.",
+    description:
+      "Passed with 73.8% across core curriculum.",
     value: 73.8,
     max: 100,
     label: "SSLC",
@@ -56,9 +57,9 @@ function ScoreChart({ value, max, label }) {
   ];
 
   return (
-    <div className="w-32 h-32 outline-none focus:outline-none">
+    <div className="w-24 h-24 sm:w-28 sm:h-28 md:w-32 md:h-32">
       <ResponsiveContainer width="100%" height="100%">
-        <PieChart tabIndex={-1}>
+        <PieChart>
           <Pie
             data={data}
             dataKey="value"
@@ -66,7 +67,6 @@ function ScoreChart({ value, max, label }) {
             outerRadius={50}
             startAngle={90}
             endAngle={-270}
-            rootTabIndex={-1}
           >
             {data.map((_, index) => (
               <Cell key={index} fill={COLORS[index]} />
@@ -115,77 +115,104 @@ export const QualificationSection = () => {
   }, []);
 
   return (
-    <section id="qualification" className="py-20 bg-gray-50/50">
+    <section
+      id="qualification"
+      className="py-16 sm:py-20 bg-gray-50/50 overflow-hidden"
+    >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+
         {/* Header */}
-        <div className="relative flex items-center justify-center mb-16 select-none">
-          <h1 className="text-6xl sm:text-8xl md:text-9xl font-black uppercase text-stroke-bg tracking-widest text-center">
+        <div className="relative flex items-center justify-center mb-12 sm:mb-16 select-none">
+          <h1 className="text-5xl sm:text-7xl md:text-8xl lg:text-9xl font-black uppercase text-stroke-bg tracking-widest text-center">
             Learning
           </h1>
 
           <h2 className="absolute text-xl sm:text-3xl md:text-4xl font-bold uppercase text-[#0BCEAF] tracking-wider text-center">
-             My Education 
+            My Education
           </h2>
         </div>
 
-        <div className="mr-50 lg:grid-cols-1 gap-12">
-          {/* Education */}
-          <div>
-            <div className="flex items-center gap-3 mb-8 border-b-2 border-[#0BCEAF] pb-2 inline-flex">
-              <GraduationCap className="w-7 h-7 text-[#0BCEAF]" />
+        {/* Title */}
+        <div className="flex items-center gap-3 mb-8 border-b-2 border-[#0BCEAF] pb-2 inline-flex">
+          <GraduationCap className="w-7 h-7 text-[#0BCEAF]" />
 
-              <h3 className="text-2xl sm:text-3xl font-bold text-gray-800">
-               Education
-              </h3>
-            </div>
-
-            <div
-              className="w-[110%] border-r-2 border-[#0BCEAF] pl-6 ml-3 space-y-8"
-              data-aos="fade-left"
-            >
-              {educationList.map((item, index) => (
-                <div
-                  key={item.id}
-                  data-aos="fade-right"
-                  data-aos-delay={index * 100}
-                  className={`relative w-[75%] group bg-white p-5 rounded-2xl border border-[#0BCEAF] shadow-sm hover:shadow-lg transition-all duration-300 flex justify-between items-center gap-6
-                    ${index === 1 ? "ml-[100px]" : ""}
-                    ${index === 2 ? "ml-[200px]" : ""}
-                  `}
-                >
-                  {/* Timeline Dot */}
-                  <CircleDot className="absolute -left-[35px] top-6 text-[#0BCEAF] bg-white rounded-full h-5 w-5 fill-[#0BCEAF]/20" />
-
-                  {/* Left Content */}
-                  <div className="flex-1">
-                    <h5 className="text-lg font-bold text-gray-800 mb-1 group-hover:text-[#0BCEAF] transition-colors">
-                      {item.title}
-                    </h5>
-
-                    <p className="text-xs text-[#0BCEAF] font-bold mb-2 uppercase tracking-wide">
-                      {item.institution}
-                    </p>
-
-                    <span className="inline-block bg-gray-100 text-gray-700 text-xs px-2.5 py-1 rounded-full font-semibold mb-3">
-                      {item.period}
-                    </span>
-
-                    <p className="text-gray-600 text-sm leading-relaxed">
-                      {item.description}
-                    </p>
-                  </div>
-
-                  {/* Right Pie Chart */}
-                  <ScoreChart
-                    value={item.value}
-                    max={item.max}
-                    label={item.label}
-                  />
-                </div>
-              ))}
-            </div>
-          </div>
+          <h3 className="text-2xl sm:text-3xl font-bold text-gray-800">
+            Education
+          </h3>
         </div>
+
+        {/* Timeline */}
+        <div
+          className="relative border-l-2 border-[#0BCEAF] pl-6 space-y-8"
+          data-aos="fade-left"
+        >
+          {educationList.map((item, index) => (
+            <div
+              key={item.id}
+              data-aos="fade-right"
+              data-aos-delay={index * 100}
+              className={`relative
+              bg-white
+              border
+              border-[#0BCEAF]
+              rounded-2xl
+              p-5
+              shadow-sm
+              hover:shadow-xl
+              transition-all
+              duration-300
+              flex
+              flex-col
+              md:flex-row
+              items-center
+              gap-6
+              w-full
+              md:w-[95%]
+              lg:w-[85%]
+
+              ${
+                index === 1
+                  ? "md:ml-10 lg:ml-20"
+                  : index === 2
+                  ? "md:ml-20 lg:ml-40"
+                  : ""
+              }
+              `}
+            >
+              {/* Timeline Dot */}
+              <CircleDot className="absolute -left-[36px] top-8 text-[#0BCEAF] bg-white rounded-full h-5 w-5 fill-[#0BCEAF]/20" />
+
+              {/* Content */}
+              <div className="flex-1 text-center md:text-left">
+                <h5 className="text-lg font-bold text-gray-800 group-hover:text-[#0BCEAF] transition-colors">
+                  {item.title}
+                </h5>
+
+                <p className="text-xs text-[#0BCEAF] font-bold uppercase mt-2">
+                  {item.institution}
+                </p>
+
+                <span className="inline-block mt-3 bg-gray-100 px-3 py-1 rounded-full text-xs font-semibold">
+                  {item.period}
+                </span>
+
+                <p className="mt-3 text-gray-600 text-sm leading-relaxed">
+                  {item.description}
+                </p>
+              </div>
+
+              {/* Chart */}
+              <div className="flex justify-center md:justify-end">
+                <ScoreChart
+                  value={item.value}
+                  max={item.max}
+                  label={item.label}
+                />
+              </div>
+            </div>
+          ))}
+        </div>
+
       </div>
     </section>
   );

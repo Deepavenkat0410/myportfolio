@@ -102,26 +102,30 @@ export const PortfolioSection = () => {
       : portfolioItems.filter((item) => item.category === filter);
 
   return (
-    <section id="portfolio" className="py-20 bg-white">
+   <section
+  id="portfolio"
+  className="py-16 sm:py-20 bg-white overflow-hidden"
+>
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Header with Background Stroke */}
-        <div className="relative flex items-center justify-center mb-12 select-none">
-          <h1 className="text-6xl sm:text-8xl md:text-9xl font-black uppercase text-stroke-bg tracking-widest text-center">
-            project
-          </h1>
-          <h2 className="absolute text-2xl sm:text-4xl font-bold uppercase text-[#0BCEAF] tracking-wider">
-            My Projects
-          </h2>
-        </div>
+      <div className="relative flex items-center justify-center mb-10 sm:mb-16 select-none">
+  <h1 className="text-4xl sm:text-6xl md:text-8xl lg:text-9xl font-black uppercase text-stroke-bg tracking-widest text-center pointer-events-none">
+    Project
+  </h1>
+
+  <h2 className="absolute text-xl sm:text-3xl md:text-4xl font-bold uppercase text-[#0BCEAF] tracking-wider text-center">
+    My Projects
+  </h2>
+</div>
 
         {/* Filter Navigation */}
-        <div className="flex justify-center mb-12">
-          <ul className="flex flex-wrap justify-center items-center gap-2 sm:gap-4 bg-gray-100 p-1.5 rounded-full border border-gray-200">
+      <div className="flex justify-center mb-10 px-2">
+  <ul className="flex flex-wrap justify-center gap-2 bg-gray-100 p-2 rounded-2xl border border-gray-200">
             <li>
               <button
                 type="button"
                 onClick={() => setFilter('*')}
-                className={`px-5 py-2 text-sm font-semibold rounded-full transition-all duration-300 ${
+               className={`px-4 sm:px-5 py-2 text-xs sm:text-sm font-semibold rounded-full transition-all duration-300 ${
                   filter === '*'
                     ? 'bg-[#0BCEAF] text-white shadow-md'
                     : 'text-gray-600 hover:text-[#0BCEAF]'
@@ -173,7 +177,7 @@ export const PortfolioSection = () => {
         </div>
 
         {/* Portfolio Items Grid */}
-        <motion.div layout className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+        <motion.div layout className="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-3 gap-6 lg:gap-8">
           <AnimatePresence>
             {filteredItems.map((item) => (
               <motion.div
@@ -183,11 +187,11 @@ export const PortfolioSection = () => {
                 animate={{ opacity: 1, scale: 1 }}
                 exit={{ opacity: 0, scale: 0.9 }}
                 transition={{ duration: 0.3 }}
-                className="portfolio-card group relative rounded-2xl overflow-hidden shadow-md hover:shadow-xl border border-gray-100 bg-white flex flex-col transition-all duration-300"
+                className="group relative rounded-2xl overflow-hidden shadow-md hover:shadow-xl border border-gray-100 bg-white flex flex-col transition-all duration-300 hover:-translate-y-2"
               >
                 {/* Image Container with Title Overlay */}
                 <div
-                  className="relative h-64 overflow-hidden bg-gray-900 cursor-pointer"
+                className="relative h-52 sm:h-60 lg:h-64 overflow-hidden bg-gray-900 cursor-pointer"
                   onClick={() => setActiveLightbox(item)}
                 >
                   <img
@@ -198,18 +202,18 @@ export const PortfolioSection = () => {
                       e.currentTarget.src =
                         'https://images.unsplash.com/photo-1557804506-669a67965ba0?auto=format&fit=crop&q=80&w=800';
                     }}
-                    className="w-full h-full object-cover transform transition-transform duration-700 group-hover:scale-110"
+                   className="w-full h-full object-cover transition-transform duration-700 ease-out group-hover:scale-110"
                   />
 
                   {/* Always-visible Title & Category Gradient Overlay on Image */}
-                  <div className="absolute inset-0 bg-gradient-to-t from-black/85 via-black/30 to-transparent flex flex-col justify-between p-5 transition-opacity duration-300 group-hover:opacity-20">
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/85 via-black/30 to-transparent flex flex-col justify-between p-4 sm:p-5 transition-opacity duration-300 group-hover:opacity-20">
                     <div className="flex justify-between items-start">
                     
                     </div>
 
                     
                     <div className="transition-all duration-300 group-hover:opacity-0">
-                      <h4 className="text-xl font-extrabold text-white drop-shadow-md mb-1">
+                      <h4 className="text-lg sm:text-xl font-extrabold text-white drop-shadow-md mb-1">
                         {item.title}
                       </h4>
                       <p className="text-xs text-gray-200 line-clamp-2 opacity-90">
@@ -219,7 +223,7 @@ export const PortfolioSection = () => {
                   </div>
 
                   {/* Hover Overlay with Action Button */}
-                  <div className=" absolute inset-0  bg-gradient-to-t from-black/85 via-black/30 to-transparent ... group-hover:opacity-20 flex flex-col items-center justify-center p-6 text-center text-white opacity-0 group-hover:opacity-100 transition-all duration-300">
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/40 to-transparent flex flex-col items-center justify-center p-4 sm:p-6 text-center text-white opacity-0 group-hover:opacity-100 transition-all duration-500">
                     <span className="text-xs  text-[#0BCEAF]  uppercase font-extrabold tracking-wider bg-black/30 px-3 py-1 rounded-full mb-3 border border-white/20">
                       {item.categoryLabel}
                     </span>
@@ -242,11 +246,11 @@ export const PortfolioSection = () => {
       {/* Lightbox Modal */}
       {activeLightbox && (
         <div
-          className="fixed inset-0 z-50 flex items-center justify-center bg-black/80 p-4 backdrop-blur-sm overflow-y-auto"
+          className="fixed inset-0 z-50 flex items-center justify-center bg-black/80 backdrop-blur-sm p-3 sm:p-5 overflow-y-auto"
           onClick={() => setActiveLightbox(null)}
         >
           <div
-            className="bg-white rounded-2xl max-w-3xl w-full p-6 sm:p-8 relative shadow-2xl overflow-hidden my-8 max-h-[90vh] overflow-y-auto"
+            className="bg-white rounded-2xl w-full max-w-md sm:max-w-2xl lg:max-w-4xl p-4 sm:p-6 lg:p-8 relative shadow-2xl my-6 max-h-[90vh] overflow-y-auto"
             onClick={(e) => e.stopPropagation()}
           >
             <button
@@ -258,7 +262,7 @@ export const PortfolioSection = () => {
             </button>
 
             {/* Banner Image */}
-            <div className="rounded-xl overflow-hidden mb-6 max-h-72 shadow-md relative">
+            <div className="rounded-xl overflow-hidden mb-6 h-52 sm:h-64 lg:h-72 shadow-md relative">
               <img
                 src={activeLightbox.image}
                 alt={activeLightbox.title}
@@ -278,7 +282,7 @@ export const PortfolioSection = () => {
 
             {/* Project Title & Overview */}
             <div>
-              <h3 className="text-2xl sm:text-3xl font-black text-gray-900 mb-3">
+              <h3 className="text-xl sm:text-2xl lg:text-3xl font-black text-gray-900 mb-3">
                 {activeLightbox.title}
               </h3>
 
@@ -299,7 +303,7 @@ export const PortfolioSection = () => {
                     <Code2 className="w-4 h-4 text-[#0BCEAF]" />
                     Technologies Used
                   </h4>
-                  <div className="flex flex-wrap gap-2">
+                  <div className="flex flex-wrap gap-2 justify-start">
                     {activeLightbox.technologies.map((tech, idx) => (
                       <span
                         key={idx}
@@ -349,7 +353,7 @@ export const PortfolioSection = () => {
               )}
 
               {/* Action Buttons */}
-              <div className="flex justify-between items-center pt-5 border-t border-gray-100 flex-wrap gap-3">
+              <div className="flex flex-col sm:flex-row justify-between items-center gap-4 pt-5 border-t border-gray-100">
                 <a
                   href="https://github.com/Deepavenkat0410"
                   target="_blank"
@@ -359,18 +363,17 @@ export const PortfolioSection = () => {
                   <Github className="w-4 h-4" />
                   GitHub Repository
                 </a>
-                <div className="flex gap-3">
+                <div className="flex flex-col sm:flex-row gap-3 w-full sm:w-auto">
                   <button
                     onClick={() => setActiveLightbox(null)}
-                    className="px-6 py-2.5 bg-gray-100 text-gray-700 font-bold text-sm rounded-full hover:bg-gray-200 transition-colors"
+                   className="w-full sm:w-auto px-6 py-2.5 bg-gray-100 text-gray-700 font-bold rounded-full hover:bg-gray-200 transition"
                   >
                     Close
                   </button>
                   <a
                     href="#contact"
                     onClick={() => setActiveLightbox(null)}
-                    className="px-6 py-2.5 bg-[#0BCEAF] text-white font-bold text-sm rounded-full hover:bg-[#089e86] transition-colors inline-flex items-center gap-2 shadow-md hover:shadow-lg"
-                  >
+                    className="w-full sm:w-auto px-6 py-2.5 bg-[#0BCEAF] text-white font-bold rounded-full hover:bg-[#089e86] transition inline-flex justify-center items-center gap-2">
                     Contact Developer
                     <ExternalLink className="w-4 h-4" />
                   </a>

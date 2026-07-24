@@ -10,56 +10,38 @@ export const AboutSection = () => {
     { label: "CGPA", value: "7.6950 / 10" },
     { label: "Phone", value: "8608612728" },
     { label: "Email", value: "deepavenkat093@gmail.com" },
-    { label: "Address", value: "No.4, Periyar St, Anna Nagar, Karaikudi" },
+    {
+      label: "Address",
+      value: "No.4, Periyar Street, Anna Nagar, Karaikudi",
+    },
     { label: "GitHub", value: "github.com/Deepavenkat0410" },
   ];
 
-  const scrollToContact = (e, id) => {
-    e.preventDefault();
-    const element = document.getElementById(id);
-    if (element) {
-      const yOffset = -45;
-      const y =
-        element.getBoundingClientRect().top +
-        window.pageYOffset +
-        yOffset;
-
-      window.scrollTo({
-        top: y,
-        behavior: "smooth",
-      });
-    }
-  };
-
   return (
-    <section id="about" className="py-20 bg-white">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <section id="about" className="py-16 md:py-20 bg-white">
+      <div className="max-w-7xl mx-auto px-5 sm:px-6 lg:px-8">
         {/* Header */}
-        <div className="relative flex items-center justify-center mb-16 select-none">
-          <h1 className="text-6xl sm:text-8xl md:text-9xl font-black uppercase text-stroke-bg tracking-widest text-center">
+        <div className="relative flex items-center justify-center mb-14 select-none">
+          <h1 className="text-5xl sm:text-7xl md:text-8xl lg:text-9xl font-black uppercase text-stroke-bg tracking-widest text-center">
             About
           </h1>
 
-          <h2 className="absolute text-2xl sm:text-4xl font-bold uppercase text-[#0BCEAF] tracking-wider">
+          <h2 className="absolute text-xl sm:text-3xl md:text-4xl font-bold uppercase text-[#0BCEAF] tracking-wider">
             About Me
           </h2>
         </div>
 
-        <div className="grid grid-cols-1 lg:grid-cols-1 gap-10 items-center">
-          {/* About Image */}
-          <div className="lg:col-span-5">
-            <div className="rounded-2xl overflow-hidden shadow-xl border border-[#0BCEAF] group relative">
-              {/* Image here */}
-            </div>
-          </div>
+        {/* Main Content */}
+        <div className="flex flex-col gap-10">
 
           {/* About Content */}
-          <div className="lg:col-span-7 space-y-6">
-            <h3 className="text-2xl sm:text-3xl font-bold text-gray-800">
+          <div className="space-y-8">
+
+            <h3 className="text-2xl sm:text-3xl font-bold text-gray-800 text-center lg:text-left">
               Aspiring Front-End Developer
             </h3>
 
-            <p className="text-gray-600 leading-relaxed text-base">
+            <p className="text-gray-600 leading-8 text-base text-justify">
               Aspiring Front-End Developer with a background in Electrical and
               Electronics Engineering and hands-on experience in HTML, CSS,
               JavaScript, React.js, and Tailwind CSS. Seeking an entry-level
@@ -67,73 +49,109 @@ export const AboutSection = () => {
               applications.
             </p>
 
-            {/* Resume Info Animation */}
+            {/* Personal Information */}
             <motion.div
-              className="grid pl-30 sm:grid-cols-2 gap-y-3 gap-x-5 border-l-2 border-[#0BCEAF] py-8 my-6"
               initial={{ opacity: 0, x: 120 }}
               whileInView={{ opacity: 1, x: 0 }}
               transition={{ duration: 0.8 }}
-              viewport={{ once: true, amount: 0.3 }}
+              viewport={{ once: true }}
+              className="border-l-4 border-[#0BCEAF] pl-5 sm:pl-8"
             >
-              {infoItems.map((item, idx) => (
-                <motion.div
-                  key={idx}
-                  className="flex items-center text-sm sm:text-base"
-                  initial={{ opacity: 0, x: 80 }}
-                  whileInView={{ opacity: 1, x: 0 }}
-                  transition={{
-                    duration: 0.5,
-                    delay: idx * 0.12,
-                  }}
-                  viewport={{ once: true }}
-                >
-                  <span className="font-bold text-gray-800 w-24 shrink-0">
-                    {item.label}:
-                  </span>
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-y-5 gap-x-8">
 
-                  {item.label === "GitHub" ? (
-                    <a
-                      href="https://github.com/Deepavenkat0410"
-                      target="_blank"
-                      rel="noreferrer"
-                      className="text-[#0BCEAF] font-medium hover:underline truncate"
-                    >
-                      Deepavenkat0410
-                    </a>
-                  ) : item.label === "Email" ? (
-                    <a
-                      href={`mailto:${item.value}`}
-                      className="text-[#0BCEAF] font-medium hover:underline truncate"
-                    >
-                      {item.value}
-                    </a>
-                  ) : (
-                    <span className="text-gray-600 font-medium truncate">
-                      {item.value}
+                {infoItems.map((item, idx) => (
+                  <motion.div
+                    key={idx}
+                    initial={{ opacity: 0, x: 60 }}
+                    whileInView={{ opacity: 1, x: 0 }}
+                    transition={{
+                      duration: 0.5,
+                      delay: idx * 0.1,
+                    }}
+                    viewport={{ once: true }}
+                    className="flex flex-col sm:flex-row sm:items-start gap-1 sm:gap-2"
+                  >
+                    <span className="font-bold text-gray-800 min-w-[90px]">
+                      {item.label} :
                     </span>
-                  )}
-                </motion.div>
-              ))}
+
+                    {item.label === "GitHub" ? (
+                      <a
+                        href="https://github.com/Deepavenkat0410"
+                        target="_blank"
+                        rel="noreferrer"
+                        className="text-[#0BCEAF] hover:underline break-all"
+                      >
+                        Deepavenkat0410
+                      </a>
+                    ) : item.label === "Email" ? (
+                      <a
+                        href={`mailto:${item.value}`}
+                        className="text-[#0BCEAF] hover:underline break-all"
+                      >
+                        {item.value}
+                      </a>
+                    ) : item.label === "Phone" ? (
+                      <a
+                        href={`tel:${item.value}`}
+                        className="text-gray-600 hover:text-[#0BCEAF]"
+                      >
+                        {item.value}
+                      </a>
+                    ) : (
+                      <span className="text-gray-600 break-words">
+                        {item.value}
+                      </span>
+                    )}
+                  </motion.div>
+                ))}
+
+              </div>
             </motion.div>
 
-            {/* Languages */}
-            <div className="flex flex-wrap justify-center items-center gap-10 text-sm text-gray-700">
-              <div className="flex items-center gap-2 bg-gray-50 px-4 py-2 rounded-xl border border-gray-200">
-                <Languages className="w-8 h-8 text-[#0BCEAF]" />
-                <span className="font-semibold text-gray-800">
-                  Languages:
-                </span>
-                <span>Tamil (Native), English</span>
+            {/* Language & Typing */}
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-5">
+
+              {/* Languages */}
+              <div className="flex items-center gap-4 bg-gray-50 border border-gray-200 rounded-2xl p-5 hover:shadow-lg transition duration-300">
+
+                <div className="w-12 h-12 rounded-full bg-[#0BCEAF]/10 flex items-center justify-center shrink-0">
+                  <Languages className="w-6 h-6 text-[#0BCEAF]" />
+                </div>
+
+                <div>
+                  <h4 className="font-bold text-gray-800">
+                    Languages
+                  </h4>
+
+                  <p className="text-gray-600 text-sm">
+                    Tamil (Native), English
+                  </p>
+                </div>
+
               </div>
 
-              <div className="flex items-center gap-2 bg-gray-50 px-4 py-2 rounded-xl border border-gray-200">
-                <Award className="w-8 h-8 text-[#0BCEAF]" />
-                <span className="font-semibold text-gray-800">
-                  Typing:
-                </span>
-                <span>Junior English (Distinction)</span>
+              {/* Typing */}
+              <div className="flex items-center gap-4 bg-gray-50 border border-gray-200 rounded-2xl p-5 hover:shadow-lg transition duration-300">
+
+                <div className="w-12 h-12 rounded-full bg-[#0BCEAF]/10 flex items-center justify-center shrink-0">
+                  <Award className="w-6 h-6 text-[#0BCEAF]" />
+                </div>
+
+                <div>
+                  <h4 className="font-bold text-gray-800">
+                    Typing
+                  </h4>
+
+                  <p className="text-gray-600 text-sm">
+                    Junior English (Distinction)
+                  </p>
+                </div>
+
               </div>
+
             </div>
+
           </div>
         </div>
       </div>

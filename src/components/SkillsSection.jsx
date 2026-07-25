@@ -50,11 +50,10 @@ export const SkillsSection = () => {
       <div className="max-w-7xl mx-auto px-5 sm:px-6 lg:px-8">
 
         {/* Header */}
-        <div className="relative flex items-center justify-center mb-12 md:mb-16 select-none">
-
-          <h1 className="text-5xl sm:text-6xl md:text-8xl lg:text-9xl font-black uppercase text-stroke-bg tracking-widest text-center">
-            Skills
-          </h1>
+        <div className="relative flex items-center justify-center mb-12 sm:mb-16 select-none">
+  <h1 className="text-5xl sm:text-6xl md:text-8xl lg:text-9xl font-black uppercase text-stroke-bg tracking-widest text-center pointer-events-none">
+    Skills
+  </h1>
 
           <h2 className="absolute text-xl sm:text-3xl md:text-4xl font-bold uppercase text-[#0BCEAF] tracking-wider">
             My Skills

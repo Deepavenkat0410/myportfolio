@@ -108,8 +108,8 @@ export const PortfolioSection = () => {
 >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Header with Background Stroke */}
-      <div className="relative flex items-center justify-center mb-10 sm:mb-16 select-none">
-  <h1 className="text-4xl sm:text-6xl md:text-8xl lg:text-9xl font-black uppercase text-stroke-bg tracking-widest text-center pointer-events-none">
+      <div className="relative flex items-center justify-center mb-12 sm:mb-16 select-none">
+  <h1 className="text-5xl sm:text-6xl md:text-8xl lg:text-9xl font-black uppercase text-stroke-bg tracking-widest text-center pointer-events-none">
     Project
   </h1>
 

@@ -322,57 +322,57 @@ export const Header = ({ onPlayVideo }) => {
 
 
 
-            {/* Download Button */}
+           {/* Download Button */}
+<div
+  className="
+    flex
+    justify-center
+    lg:justify-start
+    
+    pt-2
+  
+  "
+>
+  <a
+    href="#download"
+    onClick={handleDownloadCV}
+    className="
+      inline-flex
+      items-center
+      justify-center
+      gap-2
 
+      w-full
+      sm:w-auto
 
-            <div
-              className="
-              flex 
-              flex-wrap 
-              items-center 
-              justify-center 
-              lg:justify-start 
-              gap-5 
-              pt-2
-              w-full
-              "
-            >
+      px-6
+      sm:px-8
 
+      py-3
+      sm:py-3.5
 
-              <a
-                href="#download"
-                onClick={handleDownloadCV}
-                className="
-                inline-flex 
-                items-center 
-                justify-center
-                gap-2 
-                w-full
-                sm:w-auto
-                px-8 
-                py-3.5 
-                bg-[#0BCEAF]
-                hover:bg-[#089e86]
-                text-white
-                border-2 
-                border-white 
-                font-bold 
-                rounded-full 
-                transition-all 
-                duration-300
-                hover:bg-white 
-                hover:text-[#0BCEAF] 
-                hover:scale-110
-                hover:shadow-xl
-                "
-              >
+      text-sm
+      sm:text-base
 
-                <Download className="w-5 h-5"/>
+      bg-[#0BCEAF]
+      text-white
+      border-2
+      border-white
+      font-bold
+      rounded-full
 
-                Download Resume
+      transition-all
+      duration-300
 
-              </a>
-
+      hover:bg-white
+      hover:text-[#0BCEAF]
+      hover:scale-105
+      hover:shadow-xl
+    "
+  >
+    <Download className="w-5 h-5 sm:w-6 sm:h-6" />
+    <span>Download Resume</span>
+  </a>
 
             </div>
 

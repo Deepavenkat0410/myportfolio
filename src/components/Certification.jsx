@@ -22,7 +22,7 @@ export const Certification = () => {
       provider:
         "Government of Tamil Nadu Department of Technical Education",
       year: "2024",
-      certificate: "/certificates/typing.jpg",
+      certificate: "assets/.aistudio/typing.jpg",
     },
 
     {
@@ -35,7 +35,7 @@ export const Certification = () => {
         "Attended a hands-on workshop on Problem Solving using Python Programming conducted by ACGCET covering Python fundamentals and problem-solving techniques.",
       provider: "ACGCET",
       year: "2023 - 1 Day",
-      certificate: "/certificates/python.jpg",
+      certificate: "assets/.aistudio/pspp.jpg",
     },
 
     {
@@ -48,7 +48,7 @@ export const Certification = () => {
         "Completed an intensive internship at NSIC focusing on HTML, CSS, JavaScript, React, APIs, Responsive Web Design and Full Stack Development concepts.",
       provider: "NSIC",
       year: "2025 - 1 Week",
-      certificate: "/certificates/nsic.jpg",
+      certificate: "assets/.aistudio/fullstack.jpg",
     },
 
     {
@@ -61,7 +61,7 @@ export const Certification = () => {
         "Successfully completed the 12-week NPTEL certification covering Electronic Circuits, PCB Design, CAD Software and Hardware Design concepts.",
       provider: "NPTEL",
       year: "2025 - 12 Weeks",
-      certificate: "/certificates/nptel.jpg",
+      certificate: "assets/.aistudio/Nptel.jpg",
     },
   ];
 

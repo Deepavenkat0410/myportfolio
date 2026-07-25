@@ -6,6 +6,10 @@ import {
   Cpu,
   X,
 } from "lucide-react";
+import typing from "../assets/typing.jpg";
+import pspp from "../assets/pspp.jpg";
+import Nptel from "../assets/Nptel.jpg";
+import fullstack from "../assets/fullstack.jpg";
 
 export const Certification = () => {
   const [activeModal, setActiveModal] = useState(null);
@@ -22,7 +26,7 @@ export const Certification = () => {
       provider:
         "Government of Tamil Nadu Department of Technical Education",
       year: "2024",
-      certificate: "assets/.aistudio/typing.jpg",
+      certificate: typing,
     },
 
     {
@@ -35,7 +39,7 @@ export const Certification = () => {
         "Attended a hands-on workshop on Problem Solving using Python Programming conducted by ACGCET covering Python fundamentals and problem-solving techniques.",
       provider: "ACGCET",
       year: "2023 - 1 Day",
-      certificate: "assets/.aistudio/pspp.jpg",
+      certificate: pspp,
     },
 
     {
@@ -48,7 +52,7 @@ export const Certification = () => {
         "Completed an intensive internship at NSIC focusing on HTML, CSS, JavaScript, React, APIs, Responsive Web Design and Full Stack Development concepts.",
       provider: "NSIC",
       year: "2025 - 1 Week",
-      certificate: "assets/.aistudio/fullstack.jpg",
+      certificate: fullstack,
     },
 
     {
@@ -61,7 +65,7 @@ export const Certification = () => {
         "Successfully completed the 12-week NPTEL certification covering Electronic Circuits, PCB Design, CAD Software and Hardware Design concepts.",
       provider: "NPTEL",
       year: "2025 - 12 Weeks",
-      certificate: "assets/.aistudio/Nptel.jpg",
+      certificate: Nptel,
     },
   ];
 

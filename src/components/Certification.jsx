@@ -6,10 +6,10 @@ import {
   Cpu,
   X,
 } from "lucide-react";
-import typing from "assets/.aistudio/typing.jpg";
-import pspp from "assets/.aistudio/pspp.jpg";
-import Nptel from "assets/.aistudio/Nptel.jpg";
-import fullstack from "assets/.aistudio/fullstack.jpg";
+import typing from "/assets/.aistudio/typing.jpg";
+import pspp from "/assets/.aistudio/pspp.jpg";
+import Nptel from "/assets/.aistudio/Nptel.jpg";
+import fullstack from "/assets/.aistudio/fullstack.jpg";
 
 export const Certification = () => {
   const [activeModal, setActiveModal] = useState(null);

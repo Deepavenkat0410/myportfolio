@@ -123,7 +123,7 @@ export const QualificationSection = () => {
 
         {/* Header */}
         <div className="relative flex items-center justify-center mb-12 sm:mb-16 select-none">
-          <h1 className="text-5xl sm:text-7xl md:text-8xl lg:text-9xl font-black uppercase text-stroke-bg tracking-widest text-center">
+          <h1 className="text-5xl sm:text-6xl md:text-8xl lg:text-9xl font-black uppercase text-stroke-bg tracking-widest text-center">
             Learning
           </h1>
 

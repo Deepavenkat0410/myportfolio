@@ -52,7 +52,7 @@ export const ContactSection = () => {
           <h1
             className="
               text-4xl
-              sm:text-7xl
+              sm:text-6xl
               md:text-8xl
               lg:text-9xl
               font-black

@@ -190,14 +190,7 @@ export const Certification = () => {
 
             {/* Certificate Button */}
             <div className="flex flex-col sm:flex-row justify-between gap-4 mt-8">
-              <a
-                href={activeModal.certificate}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="w-full sm:w-auto text-center px-6 py-3 rounded-full bg-[#0BCEAF] text-white font-semibold hover:bg-[#089e86] transition"
-              >
-                View Certificate
-              </a>
+              
 
               <button
                 onClick={() => setActiveModal(null)}

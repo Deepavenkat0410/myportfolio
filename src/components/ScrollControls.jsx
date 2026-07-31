@@ -50,7 +50,7 @@ export const ScrollControls = () => {
         <button
           type="button"
           onClick={scrollToBottom}
-          className="fixed left-1/2 -translate-x-1/2 bottom-8 z-30 text-white hover:text-white/80 p-2 rounded-full cursor-pointer animate-float transition-opacity duration-500 bg-[#0BCEAF]/30 backdrop-blur-sm border border-white/30 shadow-lg"
+          className="fixed left-1/2 -translate-x-1/2 bottom-8 z-30 text-white hover:text-white/80 p-2 rounded-full cursor-pointer animate-float transition-opacity duration-500 bg-fuchsia-900/30 backdrop-blur-sm border border-white/30 shadow-lg"
           aria-label="Scroll to content"
         >
           <ChevronDown className="w-8 h-8" />
@@ -62,7 +62,7 @@ export const ScrollControls = () => {
         <button
           type="button"
           onClick={scrollToTop}
-          className="fixed right-6 bottom-8 z-40 w-12 h-12 rounded-full bg-gray-900 border-2 border-[#0BCEAF] text-[#0BCEAF] hover:bg-[#0BCEAF] hover:text-white flex items-center justify-center shadow-2xl transition-all duration-300 transform hover:scale-110 active:scale-95"
+          className="fixed right-6 bottom-8 z-40 w-12 h-12 rounded-full bg-gray-900 border-2 border-fuchsia-900 text-fuchsia-900 hover:bg-fuchsia-900 hover:text-white flex items-center justify-center shadow-2xl transition-all duration-300 transform hover:scale-110 active:scale-95"
           aria-label="Back to Top"
         >
           <ChevronsUp className="w-6 h-6" />

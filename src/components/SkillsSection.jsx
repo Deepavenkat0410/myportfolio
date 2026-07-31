@@ -46,7 +46,7 @@ export const SkillsSection = () => {
   }, []);
 
   return (
-    <section id="skill" className="py-16 md:py-20 bg-white">
+    <section id="skill" className="py-16 md:py-20 ">
       <div className="max-w-7xl mx-auto px-5 sm:px-6 lg:px-8">
 
         {/* Header */}
@@ -55,7 +55,7 @@ export const SkillsSection = () => {
     Skills
   </h1>
 
-          <h2 className="absolute text-xl sm:text-3xl md:text-4xl font-bold uppercase text-[#0BCEAF] tracking-wider">
+          <h2 className="absolute text-xl sm:text-3xl md:text-4xl font-bold uppercase text-fuchsia-900 tracking-wider">
             My Skills
           </h2>
 

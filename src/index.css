@@ -2,11 +2,11 @@
 
 @layer base {
   :root {
-    --primary: #0BCEAF;
-    --primary-hover: #089e86;
-    --dark: #343a40;
-    --secondary: #6c757d;
-  }
+  --primary: #701a75;      /* Tailwind fuchsia-900 */
+  --primary-hover: #86198f; /* Tailwind fuchsia-800 */
+  --dark: #343a40;
+  --secondary: #6c757d;
+}
 
   html {
     scroll-behavior: smooth;
@@ -15,11 +15,29 @@
   }
 
   body {
-    background-color: #ffffff;
-    color: #6c757d;
-    overflow-x: hidden;
-    
-  }
+  margin: 0;
+  min-height: 100%;
+}
+
+body {
+  color: #6c757d;
+  overflow-x: hidden;
+
+ background:
+    radial-gradient(
+      circle at 50% 65%,
+      rgba(220, 106, 255, 0.25),
+      transparent 38%
+    ),
+    linear-gradient(
+      135deg,
+      #fffaff 0%,
+      #f9edff 45%,
+      #fff9ff 100%
+    );
+
+  background-attachment: fixed;
+}
 }
 
 /* Keyframe Animations */
@@ -96,7 +114,7 @@
   width: 0;
   height: 0;
   margin-left: 4px;
-  border-left: 16px solid #0BCEAF;
+   border-left: 16px solid #701a75;
   border-top: 11px solid transparent;
   border-bottom: 11px solid transparent;
 }
@@ -104,9 +122,8 @@
 /* Text Stroke Effects */
 .text-stroke-white {
   -webkit-text-stroke: 2px #ffffff;
-  color: #0BCEAF;
+  color: #701a75;
 }
-
 .text-stroke-lg-white {
   -webkit-text-stroke: 2px #ffffff;
   color: transparent;
@@ -126,7 +143,7 @@
 .portfolio-overlay {
   position: absolute;
   inset: 0;
-  background-color: rgba(11, 206, 175, 0.85);
+  background-color: rgba(112, 26, 117, 0.85);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -148,11 +165,11 @@
   background: #f1f1f1;
 }
 ::-webkit-scrollbar-thumb {
-  background: #0BCEAF;
+  background: #701a75;
   border-radius: 5px;
 }
 ::-webkit-scrollbar-thumb:hover {
-  background: #089e86;
+    background: #701a75;
 }
 
 .recharts-wrapper:focus,

@@ -41,7 +41,7 @@ export const TypedText = ({
   }, [text, isDeleting, arrayIndex, strings, typeSpeed, backSpeed, backDelay]);
 
   return (
-    <span className="font-light text-white inline-block min-h-[1.5em]">
+    <span className="font-medium text-fuchsia-700 inline-block min-h-[1.5em]">
       {text}
       <span className="typed-cursor">|</span>
     </span>

@@ -104,7 +104,7 @@ export const PortfolioSection = () => {
   return (
    <section
   id="portfolio"
-  className="py-16 sm:py-20 bg-white overflow-hidden"
+  className="py-16 sm:py-20  "
 >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Header with Background Stroke */}
@@ -113,7 +113,7 @@ export const PortfolioSection = () => {
     Project
   </h1>
 
-  <h2 className="absolute text-xl sm:text-3xl md:text-4xl font-bold uppercase text-[#0BCEAF] tracking-wider text-center">
+  <h2 className="absolute text-xl sm:text-3xl md:text-4xl font-bold uppercase text-fuchsia-900 tracking-wider text-center">
     My Projects
   </h2>
 </div>
@@ -127,8 +127,8 @@ export const PortfolioSection = () => {
                 onClick={() => setFilter('*')}
                className={`px-4 sm:px-5 py-2 text-xs sm:text-sm font-semibold rounded-full transition-all duration-300 ${
                   filter === '*'
-                    ? 'bg-[#0BCEAF] text-white shadow-md'
-                    : 'text-gray-600 hover:text-[#0BCEAF]'
+                    ? 'bg-fuchsia-900 text-white shadow-md'
+                    : 'text-gray-600 hover:text-fuchsia-900'
                 }`}
               >
                 All Projects
@@ -140,8 +140,8 @@ export const PortfolioSection = () => {
                 onClick={() => setFilter('second')}
                 className={`px-5 py-2 text-sm font-semibold rounded-full transition-all duration-300 ${
                   filter === 'second'
-                    ? 'bg-[#0BCEAF] text-white shadow-md'
-                    : 'text-gray-600 hover:text-[#0BCEAF]'
+                    ? 'bg-fuchsia-900 text-white shadow-md'
+                    : 'text-gray-600 hover:text-fuchsia-900'
                 }`}
               >
                 Web Apps
@@ -153,8 +153,8 @@ export const PortfolioSection = () => {
                 onClick={() => setFilter('first')}
                 className={`px-5 py-2 text-sm font-semibold rounded-full transition-all duration-300 ${
                   filter === 'first'
-                    ? 'bg-[#0BCEAF] text-white shadow-md'
-                    : 'text-gray-600 hover:text-[#0BCEAF]'
+                    ? 'bg-fuchsia-900 text-white shadow-md'
+                    : 'text-gray-600 hover:text-fuchsia-900'
                 }`}
               >
                 IoT & Hardware
@@ -166,8 +166,8 @@ export const PortfolioSection = () => {
                 onClick={() => setFilter('third')}
                 className={`px-5 py-2 text-sm font-semibold rounded-full transition-all duration-300 ${
                   filter === 'third'
-                    ? 'bg-[#0BCEAF] text-white shadow-md'
-                    : 'text-gray-600 hover:text-[#0BCEAF]'
+                    ? 'bg-fuchsia-900 text-white shadow-md'
+                    : 'text-gray-600 hover:text-fuchsia-900'
                 }`}
               >
                 React UI
@@ -224,11 +224,11 @@ export const PortfolioSection = () => {
 
                   {/* Hover Overlay with Action Button */}
                   <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/40 to-transparent flex flex-col items-center justify-center p-4 sm:p-6 text-center text-white opacity-0 group-hover:opacity-100 transition-all duration-500">
-                    <span className="text-xs  text-[#0BCEAF]  uppercase font-extrabold tracking-wider bg-black/30 px-3 py-1 rounded-full mb-3 border border-white/20">
+                    <span className="text-xs text-fuchsia-300 uppercase font-extrabold tracking-wider bg-black/30 px-3 py-1 rounded-full mb-3 border border-white/20">
                       {item.categoryLabel}
                     </span>
                     <h4 className="text-xl font-bold mb-3 text-white drop-shadow">{item.title}</h4>
-                    <div className="flex items-center gap-2 bg-white text-[#0BCEAF] font-bold text-sm px-5 py-2.5 rounded-full shadow-lg transform group-hover:scale-105 transition-transform">
+                    <div className="flex items-center gap-2 bg-white text-fuchsia-900 font-bold text-sm px-5 py-2.5 rounded-full shadow-lg transform group-hover:scale-105 transition-transform">
                     
                       <span>View Details</span>
                     </div>
@@ -274,7 +274,7 @@ export const PortfolioSection = () => {
                 className="w-full h-full object-cover"
               />
               <div className="absolute top-4 left-4">
-                <span className="text-xs font-extrabold text-white uppercase tracking-wider bg-[#0BCEAF] px-3.5 py-1.5 rounded-full shadow-lg">
+                <span className="text-xs font-extrabold text-white uppercase tracking-wider bg-fuchsia-900 px-3.5 py-1.5 rounded-full shadow-lg">
                   {activeLightbox.categoryLabel}
                 </span>
               </div>
@@ -288,7 +288,7 @@ export const PortfolioSection = () => {
 
               <div className="mb-6 bg-gray-50 p-4 rounded-xl border border-gray-100">
                 <h4 className="text-xs uppercase font-extrabold tracking-wider text-gray-500 mb-2 flex items-center gap-1.5">
-                  <Layers className="w-4 h-4 text-[#0BCEAF]" />
+                  <Layers className="w-4 h-4 text-fuchsia-900" />
                   Project Overview
                 </h4>
                 <p className="text-gray-700 leading-relaxed text-sm sm:text-base">
@@ -300,14 +300,14 @@ export const PortfolioSection = () => {
               {activeLightbox.technologies && activeLightbox.technologies.length > 0 && (
                 <div className="mb-6">
                   <h4 className="text-xs uppercase font-extrabold tracking-wider text-gray-500 mb-2.5 flex items-center gap-1.5">
-                    <Code2 className="w-4 h-4 text-[#0BCEAF]" />
+                    <Code2 className="w-4 h-4 text-fuchsia-900" />
                     Technologies Used
                   </h4>
                   <div className="flex flex-wrap gap-2 justify-start">
                     {activeLightbox.technologies.map((tech, idx) => (
                       <span
                         key={idx}
-                        className="px-3 py-1 bg-[#0BCEAF]/10 text-[#089e86] font-semibold text-xs rounded-lg border border-[#0BCEAF]/20"
+                        className="px-3 py-1 bg-fuchsia-900/10 text-fuchsia-900 font-semibold text-xs rounded-lg border border-fuchsia-900/20"
                       >
                         {tech}
                       </span>
@@ -320,13 +320,13 @@ export const PortfolioSection = () => {
               {activeLightbox.contributions && activeLightbox.contributions.length > 0 && (
                 <div className="mb-6">
                   <h4 className="text-xs uppercase font-extrabold tracking-wider text-gray-500 mb-2.5 flex items-center gap-1.5">
-                    <CheckCircle2 className="w-4 h-4 text-[#0BCEAF]" />
+                    <CheckCircle2 className="w-4 h-4 text-fuchsia-900" />
                     My Contribution
                   </h4>
                   <ul className="space-y-2 text-sm sm:text-base text-gray-700">
                     {activeLightbox.contributions.map((point, idx) => (
                       <li key={idx} className="flex items-start gap-2">
-                        <span className="w-1.5 h-1.5 rounded-full bg-[#0BCEAF] mt-2 flex-shrink-0" />
+                        <span className="w-1.5 h-1.5 rounded-full bg-fuchsia-900 mt-2 flex-shrink-0" />
                         <span>{point}</span>
                       </li>
                     ))}
@@ -338,13 +338,13 @@ export const PortfolioSection = () => {
               {activeLightbox.keyFeatures && activeLightbox.keyFeatures.length > 0 && (
                 <div className="mb-6">
                   <h4 className="text-xs uppercase font-extrabold tracking-wider text-gray-500 mb-2.5 flex items-center gap-1.5">
-                    <CheckCircle2 className="w-4 h-4 text-[#0BCEAF]" />
+                    <CheckCircle2 className="w-4 h-4 text-fuchsia-900" />
                     Key Features
                   </h4>
                   <ul className="grid grid-cols-1 sm:grid-cols-2 gap-2 text-sm sm:text-base text-gray-700">
                     {activeLightbox.keyFeatures.map((feature, idx) => (
                       <li key={idx} className="flex items-start gap-2 bg-gray-50 p-2.5 rounded-lg border border-gray-100">
-                        <span className="w-2 h-2 rounded-full bg-[#0BCEAF] mt-1.5 flex-shrink-0" />
+                        <span className="w-2 h-2 rounded-full bg-fuchsia-900 mt-1.5 flex-shrink-0" />
                         <span className="font-medium text-xs sm:text-sm">{feature}</span>
                       </li>
                     ))}
@@ -358,7 +358,7 @@ export const PortfolioSection = () => {
                   href="https://github.com/Deepavenkat0410"
                   target="_blank"
                   rel="noreferrer"
-                  className="inline-flex items-center gap-2 text-sm text-gray-800 font-bold hover:text-[#0BCEAF] transition-colors"
+                  className="inline-flex items-center gap-2 text-sm text-gray-800 font-bold hover:text-fuchsia-900 transition-colors"
                 >
                   <Github className="w-4 h-4" />
                   GitHub Repository
@@ -373,7 +373,7 @@ export const PortfolioSection = () => {
                   <a
                     href="#contact"
                     onClick={() => setActiveLightbox(null)}
-                    className="w-full sm:w-auto px-6 py-2.5 bg-[#0BCEAF] text-white font-bold rounded-full hover:bg-[#089e86] transition inline-flex justify-center items-center gap-2">
+                    className="w-full sm:w-auto px-6 py-2.5 bg-fuchsia-900 text-white font-bold rounded-full hover:bg-fuchsia-800 transition inline-flex justify-center items-center gap-2">
                     Contact Developer
                     <ExternalLink className="w-4 h-4" />
                   </a>

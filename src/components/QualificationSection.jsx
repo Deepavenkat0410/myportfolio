@@ -9,7 +9,7 @@ import {
 import AOS from "aos";
 import "aos/dist/aos.css";
 
-const COLORS = ["#0BCEAF", "#E5E7EB"];
+const COLORS = ["#86198F", "#E5E7EB"];
 
 const educationList = [
   {
@@ -117,7 +117,7 @@ export const QualificationSection = () => {
   return (
     <section
       id="qualification"
-      className="py-16 sm:py-20 bg-gray-50/50 overflow-hidden"
+      className="py-16 sm:py-20  overflow-hidden"
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
 
@@ -128,14 +128,14 @@ export const QualificationSection = () => {
   </h1>
 
 
-          <h2 className="absolute text-xl sm:text-3xl md:text-4xl font-bold uppercase text-[#0BCEAF] tracking-wider text-center">
+          <h2 className="absolute text-xl sm:text-3xl md:text-4xl font-bold uppercase text-fuchsia-900 tracking-wider text-center">
             My Education
           </h2>
         </div>
 
         {/* Title */}
-        <div className="flex items-center gap-3 mb-8 border-b-2 border-[#0BCEAF] pb-2 inline-flex">
-          <GraduationCap className="w-7 h-7 text-[#0BCEAF]" />
+        <div className="flex items-center gap-3 mb-8 border-b-2 border-fuchsia-900 pb-2 inline-flex">
+          <GraduationCap className="w-7 h-7 text-fuchsia-900" />
 
           <h3 className="text-2xl sm:text-3xl font-bold text-gray-800">
             Education
@@ -144,7 +144,7 @@ export const QualificationSection = () => {
 
         {/* Timeline */}
         <div
-          className="relative border-l-2 border-[#0BCEAF] pl-6 space-y-8"
+          className="relative border-l-2 border-fuchsia-900 pl-6 space-y-8"
           data-aos="fade-left"
         >
           {educationList.map((item, index) => (
@@ -155,7 +155,7 @@ export const QualificationSection = () => {
               className={`relative
               bg-white
               border
-              border-[#0BCEAF]
+              border-fuchsia-900
               rounded-2xl
               p-5
               shadow-sm
@@ -181,15 +181,15 @@ export const QualificationSection = () => {
               `}
             >
               {/* Timeline Dot */}
-              <CircleDot className="absolute -left-[36px] top-8 text-[#0BCEAF] bg-white rounded-full h-5 w-5 fill-[#0BCEAF]/20" />
+              <CircleDot className="absolute -left-[36px] top-8 text-fuchsia-00 bg-white rounded-full h-5 w-5 fill-fuchsia-900/20" />
 
               {/* Content */}
               <div className="flex-1 text-center md:text-left">
-                <h5 className="text-lg font-bold text-gray-800 group-hover:text-[#0BCEAF] transition-colors">
+                <h5 className="text-lg font-bold text-gray-800 group-hover:text-fuchsia-900 transition-colors">
                   {item.title}
                 </h5>
 
-                <p className="text-xs text-[#0BCEAF] font-bold uppercase mt-2">
+                <p className="text-xs text-fuchsia-900 font-bold uppercase mt-2">
                   {item.institution}
                 </p>
 

@@ -20,7 +20,7 @@ export const Navbar = () => {
   useEffect(() => {
     const handleScroll = () => {
       // Toggle navbar visibility on scroll > 200px
-      if (window.scrollY > 200) {
+      if (window.scrollY > 0) {
         setIsScrolled(true);
       } else {
         setIsScrolled(false);
@@ -58,27 +58,27 @@ export const Navbar = () => {
 
   return (
     <nav
-      className={`fixed top-0 left-0 right-0 z-40 bg-white/95 backdrop-blur-md shadow-sm transition-all duration-500 ${
+      className={`fixed top-0 left-0 right-0 z-40 bg-fuchsia-300/90 transition-all duration-500 ${
         isScrolled
           ? 'opacity-100 translate-y-0 py-2 sm:py-3'
           : 'opacity-0 -translate-y-full pointer-events-none'
       }`}
     >
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex items-center justify-between h-16">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex items-center  justify-between h-16">
         {/* Brand Logo */}
         <a
           href="#home"
           onClick={(e) => scrollToSection(e, 'home')}
-          className="text-2xl font-black tracking-tight text-gray-800"
+          className="text-2xl italic font-black tracking-tight text-fuchsia-900 rounded-full border-1 bg-fuchsia-500/30 p-2"
         >
-          <span className="text-[#0BCEAF]">DEEPA</span> V
+          <span className="text-fuchsia-900">DV</span> 
         </a>
 
         {/* Mobile Toggle Button */}
         <button
           type="button"
           onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-          className="lg:hidden p-2 rounded-md text-gray-700 hover:text-[#0BCEAF] hover:bg-gray-100 focus:outline-none"
+          className="lg:hidden p-2 rounded-md text-gray-700 hover:text-fuchsia-700 hover:bg-fuchsia-100 focus:outline-none"
           aria-label="Toggle Navigation"
         >
           {isMobileMenuOpen ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
@@ -95,8 +95,8 @@ export const Navbar = () => {
                 onClick={(e) => scrollToSection(e, link.id)}
                 className={`px-3 py-2 text-sm font-medium transition-colors rounded-md ${
                   isActive
-                    ? 'text-[#0BCEAF] font-bold'
-                    : 'text-gray-700 hover:text-[#0BCEAF]'
+                    ? 'text-fuchsia-700 font-bold'
+                    : 'text-black hover:text-fuchsia-700'
                 }`}
               >
                 {link.label}
@@ -110,7 +110,7 @@ export const Navbar = () => {
           <a
             href="#contact"
             onClick={(e) => scrollToSection(e, 'contact')}
-            className="px-5 py-2 border-2 border-[#0BCEAF] text-[#0BCEAF] font-medium text-sm rounded-full hover:bg-[#0BCEAF] hover:text-white transition-all shadow-sm"
+            className="px-5 py-2 border-2 border-fuchsia-700 text-fuchsia-700 font-medium text-sm rounded-full hover:bg-fuchsia-700 hover:text-white transition-all shadow-sm"
           >
             Hire Me
           </a>
@@ -119,7 +119,7 @@ export const Navbar = () => {
 
       {/* Mobile Drawer Menu */}
       {isMobileMenuOpen && (
-        <div className="lg:hidden bg-white border-t border-gray-100 px-4 pt-2 pb-4 space-y-1 shadow-lg">
+        <div className="lg:hidden bg-white border-t border-fuchsia-100 px-4 pt-2 pb-4 space-y-1 shadow-lg">
           {navLinks.map((link) => {
             const isActive = activeSection === link.id;
             return (
@@ -129,8 +129,8 @@ export const Navbar = () => {
                 onClick={(e) => scrollToSection(e, link.id)}
                 className={`block px-3 py-2 rounded-md text-base font-medium ${
                   isActive
-                    ? 'bg-[#0BCEAF]/10 text-[#0BCEAF] font-bold'
-                    : 'text-gray-700 hover:bg-gray-50 hover:text-[#0BCEAF]'
+                    ? 'bg-fuchsia-700/10 text-fuchsia-700 font-bold'
+                    : 'text-gray-700 hover:bg-gray-50 hover:text-fuchsia-700'
                 }`}
               >
                 {link.label}
@@ -141,7 +141,7 @@ export const Navbar = () => {
             <a
               href="#contact"
               onClick={(e) => scrollToSection(e, 'contact')}
-              className="block w-full text-center px-4 py-2 border-2 border-[#0BCEAF] text-[#0BCEAF] font-medium text-sm rounded-full hover:bg-[#0BCEAF] hover:text-white transition-colors"
+              className="block w-full text-center px-4 py-2 border-2 border-fuchsia-700 text-fuchsia-700 font-medium text-sm rounded-full hover:bg-fuchsia-700 hover:text-white transition-colors"
             >
               Hire Me
             </a>

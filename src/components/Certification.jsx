@@ -1,20 +1,46 @@
 import React, { useState } from "react";
-import {
-  Award,
-  Code2,
-  Globe,
-  Cpu,
-  X,
-} from "lucide-react";
+import { Award, Code2, Globe, Cpu, X } from "lucide-react";
 import typing from "/assets/.aistudio/typing.jpg";
 import pspp from "/assets/.aistudio/pspp.jpg";
 import Nptel from "/assets/.aistudio/Nptel.jpg";
 import fullstack from "/assets/.aistudio/fullstack.jpg";
 
 export const Certification = () => {
-  const [activeModal, setActiveModal] = useState(null);
+ const [activeModal, setActiveModal] = useState(null);
+const [showCertificate, setShowCertificate] = useState(false);
+  // Priority Order:
+  // 1. NPTEL
+  // 2. NSIC Internship
+  // 3. Government Typing
+  // 4. Python Workshop
 
   const certifications = [
+    {
+      id: "c4",
+      title: "Electronic Systems Design - Circuits & PCB Design",
+      icon: <Cpu className="w-10 h-10 text-purple-500" />,
+      description:
+        "Completed NPTEL course on Electronic Systems Design.",
+      fullDetails:
+        "Successfully completed the 12-week NPTEL certification covering Electronic Circuits, PCB Design, CAD Software and Hardware Design concepts.",
+      provider: "NPTEL",
+      year: "2025 - 12 Weeks",
+      certificate: Nptel,
+    },
+
+    {
+      id: "c3",
+      title: "Full Stack & Web Development Internship",
+      icon: <Globe className="w-10 h-10 text-emerald-500" />,
+      description:
+        "Completed one-week internship in Full Stack Web Development.",
+      fullDetails:
+        "Completed an intensive internship at NSIC focusing on HTML, CSS, JavaScript, React, APIs, Responsive Web Design and Full Stack Development concepts.",
+      provider: "NSIC",
+      year: "2025 - 1 Week",
+      certificate: fullstack,
+    },
+
     {
       id: "c1",
       title: "Junior English Typing",
@@ -41,55 +67,28 @@ export const Certification = () => {
       year: "2023 - 1 Day",
       certificate: pspp,
     },
-
-    {
-      id: "c3",
-      title: "Full Stack & Web Development Internship",
-      icon: <Globe className="w-10 h-10 text-emerald-500" />,
-      description:
-        "Completed one-week internship in Full Stack Web Development.",
-      fullDetails:
-        "Completed an intensive internship at NSIC focusing on HTML, CSS, JavaScript, React, APIs, Responsive Web Design and Full Stack Development concepts.",
-      provider: "NSIC",
-      year: "2025 - 1 Week",
-      certificate: fullstack,
-    },
-
-    {
-      id: "c4",
-      title: "Electronic Systems Design - Circuits & PCB Design",
-      icon: <Cpu className="w-10 h-10 text-purple-500" />,
-      description:
-        "Completed NPTEL course on Electronic Systems Design.",
-      fullDetails:
-        "Successfully completed the 12-week NPTEL certification covering Electronic Circuits, PCB Design, CAD Software and Hardware Design concepts.",
-      provider: "NPTEL",
-      year: "2025 - 12 Weeks",
-      certificate: Nptel,
-    },
   ];
 
   return (
     <section
       id="certification"
-      className="py-16 sm:py-20 bg-gray-50/50 overflow-hidden"
+      className="py-16 sm:py-20  overflow-hidden"
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-
         {/* Header */}
-<div className="relative flex items-center justify-center mb-12 sm:mb-16 select-none">
-  <h1 className="text-5xl sm:text-6xl md:text-8xl lg:text-9xl font-black uppercase text-stroke-bg tracking-widest text-center pointer-events-none">
-    Certificate
-  </h1>
-          <h2 className="absolute text-xl sm:text-3xl md:text-4xl font-bold uppercase text-[#0BCEAF] tracking-wider text-center">
+        <div className="relative flex items-center justify-center mb-12 sm:mb-16 select-none">
+          <h1 className="text-5xl sm:text-6xl md:text-8xl lg:text-9xl font-black uppercase text-stroke-bg tracking-widest text-center pointer-events-none">
+            Certificate
+          </h1>
+
+          <h2 className="absolute text-xl sm:text-3xl md:text-4xl font-bold uppercase text-fuchsia-900 tracking-wider text-center">
             My Certifications
           </h2>
         </div>
 
         {/* Section Title */}
-        <div className="flex items-center gap-3 mb-8 border-b-2 border-[#0BCEAF] pb-2 w-fit">
-          <Award className="w-7 h-7 text-[#0BCEAF]" />
-
+        <div className="flex items-center gap-3 mb-8 border-b-2 border-fuchsia-900 pb-2 w-fit">
+          <Award className="w-7 h-7 text-fuchsia-900" />
           <h3 className="text-2xl sm:text-3xl font-bold text-gray-800">
             Certifications
           </h3>
@@ -104,13 +103,13 @@ export const Certification = () => {
             >
               {/* Icon */}
               <div className="flex justify-center mb-6">
-                <div className="w-16 h-16 sm:w-20 sm:h-20 rounded-2xl bg-gradient-to-br from-cyan-50 to-cyan-100 border border-cyan-200 flex items-center justify-center shadow-sm group-hover:scale-110 transition duration-300">
+                <div className="w-16 h-16 sm:w-20 sm:h-20 rounded-2xl bg-gradient-to-br from-fuchsia-50 to-fuchsia-100 border border-fuchsia-200 flex items-center justify-center shadow-sm group-hover:scale-110 transition duration-300">
                   {item.icon}
                 </div>
               </div>
 
               {/* Title */}
-              <h3 className="text-lg sm:text-xl font-bold text-center text-gray-800 mb-4 group-hover:text-[#0BCEAF] transition-colors duration-300">
+              <h3 className="text-lg sm:text-xl font-bold text-center text-gray-800 mb-4 group-hover:text-fuchsia-900 transition-colors duration-300">
                 {item.title}
               </h3>
 
@@ -123,7 +122,7 @@ export const Certification = () => {
               <div className="flex justify-center">
                 <button
                   onClick={() => setActiveModal(item)}
-                  className="px-6 py-2.5 rounded-lg bg-[#0BCEAF] text-white font-semibold hover:bg-[#089e86] transition duration-300"
+                  className="px-6 py-2.5 rounded-lg bg-fuchsia-900 text-white font-semibold hover:bg-fuchsia-800 transition duration-300"
                 >
                   Read More →
                 </button>
@@ -132,7 +131,8 @@ export const Certification = () => {
           ))}
         </div>
       </div>
-            {/* Responsive Modal */}
+
+      {/* Responsive Modal */}
       {activeModal && (
         <div
           className="fixed inset-0 z-50 flex items-center justify-center bg-black/60 backdrop-blur-sm p-4"
@@ -140,7 +140,7 @@ export const Certification = () => {
         >
           <div
             onClick={(e) => e.stopPropagation()}
-            className="relative w-full max-w-[95%] sm:max-w-lg lg:max-w-xl max-h-[90vh] overflow-y-auto rounded-2xl bg-white shadow-2xl p-5 sm:p-6 lg:p-8"
+            className="relative w-full max-w-[95%] sm:max-w-lg lg:max-w-xl max-h-[90vh] overflow-y-auto rounded-2xl bg-white/95 shadow-2xl p-5 sm:p-6 lg:p-10"
           >
             {/* Close Button */}
             <button
@@ -152,7 +152,7 @@ export const Certification = () => {
 
             {/* Icon & Title */}
             <div className="flex flex-col sm:flex-row items-center sm:items-start gap-4 mb-6 text-center sm:text-left">
-              <div className="w-16 h-16 rounded-xl bg-gradient-to-r from-[#0BCEAF] to-cyan-200 flex items-center justify-center shadow-lg shrink-0">
+              <div className="w-16 h-16 rounded-xl bg-gradient-to-r from-fuchsia-900 to-fuchsia-700 flex items-center justify-center shadow-lg shrink-0">
                 {activeModal.icon}
               </div>
 
@@ -161,7 +161,7 @@ export const Certification = () => {
                   {activeModal.title}
                 </h3>
 
-                <p className="text-sm text-[#0BCEAF] font-semibold mt-1">
+                <p className="text-sm text-fuchsia-900 font-semibold mt-1">
                   {activeModal.provider}
                 </p>
               </div>
@@ -177,7 +177,7 @@ export const Certification = () => {
               <span className="font-semibold text-gray-800">
                 Provider :
               </span>{" "}
-              <span className="text-[#0BCEAF] font-medium">
+              <span className="text-fuchsia-900 font-medium">
                 {activeModal.provider}
               </span>
             </div>
@@ -192,16 +192,26 @@ export const Certification = () => {
               </span>
             </div>
 
-            {/* Certificate Button */}
+            {/* Buttons */}
             <div className="flex flex-col sm:flex-row justify-between gap-4 mt-8">
-              <a
-                href={activeModal.certificate}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="w-full sm:w-auto text-center px-6 py-3 rounded-full bg-[#0BCEAF] text-white font-semibold hover:bg-[#089e86] transition"
-              >
-                View Certificate
-              </a>
+              <button
+  onClick={() => setShowCertificate(true)}
+  className="
+    w-full
+    sm:w-auto
+    text-center
+    px-6
+    py-3
+    rounded-full
+    bg-fuchsia-900
+    text-white
+    font-semibold
+    hover:bg-fuchsia-800
+    transition
+  "
+>
+  View Certificate
+</button>
 
               <button
                 onClick={() => setActiveModal(null)}
@@ -213,6 +223,78 @@ export const Certification = () => {
           </div>
         </div>
       )}
+      {/* Certificate Viewer */}
+
+{showCertificate && activeModal && (
+  <div
+    className="
+      fixed
+      inset-0
+      z-[60]
+      flex
+      items-center
+      justify-center
+      bg-black/70
+      backdrop-blur-sm
+      p-4
+    "
+    onClick={() => setShowCertificate(false)}
+  >
+    <div
+      className="
+        relative
+        w-full
+        max-w-xl
+        max-h-[95vh]
+        overflow-auto
+       
+        p
+        sm:p-6
+        shadow-2xl
+      "
+      onClick={(e) => e.stopPropagation()}
+    >
+      {/* Close Button */}
+      <button
+        onClick={() => setShowCertificate(false)}
+        className="
+          absolute
+          right-1
+          top-4
+          z-10
+          rounded-full
+          bg-white/50
+          p-2
+          shadow-md
+          transition
+          hover:bg-gray-100
+        "
+      >
+        <X className="w-6 h-6 text-gray-600" />
+      </button>
+
+     
+      {/* Certificate Image */}
+      <div className="flex justify-center rounded-xl p-3 sm:p-5">
+        <img
+          src={activeModal.certificate}
+          alt={`${activeModal.title} Certificate`}
+          className="
+            h-auto
+            max-h-[75vh]
+            w-auto
+            max-w-full
+            rounded-lg
+            object-contain
+            shadow-lg
+          "
+        />
+      </div>
+
+     
+    </div>
+  </div>
+)}
     </section>
   );
 };

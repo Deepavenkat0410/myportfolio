@@ -18,7 +18,7 @@ export const AboutSection = () => {
   ];
 
   return (
-    <section id="about" className="py-16 md:py-20 bg-white">
+    <section id="about" className="py-16 md:py-20 ">
       <div className="max-w-7xl mx-auto px-5 sm:px-6 lg:px-8">
         {/* Header */}
         <div className="relative flex items-center justify-center mb-14 select-none">
@@ -26,7 +26,7 @@ export const AboutSection = () => {
             About
           </h1>
 
-          <h2 className="absolute text-xl sm:text-3xl md:text-4xl font-bold uppercase text-[#0BCEAF] tracking-wider">
+          <h2 className="absolute text-xl sm:text-3xl md:text-4xl font-bold uppercase text-fuchsia-700 tracking-wider">
             About Me
           </h2>
         </div>
@@ -55,7 +55,7 @@ export const AboutSection = () => {
               whileInView={{ opacity: 1, x: 0 }}
               transition={{ duration: 0.8 }}
               viewport={{ once: true }}
-              className="border-l-4 border-[#0BCEAF] pl-5 sm:pl-8"
+              className="border-l-4 border-fuchsia-900 pl-5 sm:pl-8"
             >
               <div className="grid grid-cols-1 md:grid-cols-2 gap-y-5 gap-x-8">
 
@@ -80,21 +80,21 @@ export const AboutSection = () => {
                         href="https://github.com/Deepavenkat0410"
                         target="_blank"
                         rel="noreferrer"
-                        className="text-[#0BCEAF] hover:underline break-all"
+                        className="text-fuchsia-900 hover:underline break-all"
                       >
                         Deepavenkat0410
                       </a>
                     ) : item.label === "Email" ? (
                       <a
                         href={`mailto:${item.value}`}
-                        className="text-[#0BCEAF] hover:underline break-all"
+                        className="text-fuchsia-900 hover:underline break-all"
                       >
                         {item.value}
                       </a>
                     ) : item.label === "Phone" ? (
                       <a
                         href={`tel:${item.value}`}
-                        className="text-gray-600 hover:text-[#0BCEAF]"
+                        className="text-gray-600 hover:text-fuchsia-900"
                       >
                         {item.value}
                       </a>
@@ -115,8 +115,8 @@ export const AboutSection = () => {
               {/* Languages */}
               <div className="flex items-center gap-4 bg-gray-50 border border-gray-200 rounded-2xl p-5 hover:shadow-lg transition duration-300">
 
-                <div className="w-12 h-12 rounded-full bg-[#0BCEAF]/10 flex items-center justify-center shrink-0">
-                  <Languages className="w-6 h-6 text-[#0BCEAF]" />
+                <div className="w-12 h-12 rounded-full bg-fuchsia-900/10 flex items-center justify-center shrink-0">
+                  <Languages className="w-6 h-6 text-fuchsia-900" />
                 </div>
 
                 <div>
@@ -134,8 +134,8 @@ export const AboutSection = () => {
               {/* Typing */}
               <div className="flex items-center gap-4 bg-gray-50 border border-gray-200 rounded-2xl p-5 hover:shadow-lg transition duration-300">
 
-                <div className="w-12 h-12 rounded-full bg-[#0BCEAF]/10 flex items-center justify-center shrink-0">
-                  <Award className="w-6 h-6 text-[#0BCEAF]" />
+                <div className="w-12 h-12 rounded-full bg-fuchsia-900/10 flex items-center justify-center shrink-0">
+                  <Award className="w-6 h-6 text-fuchsia-900" />
                 </div>
 
                 <div>

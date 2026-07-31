@@ -13,13 +13,14 @@ import { Footer } from './components/Footer.jsx';
 import { VideoModal } from './components/VideoModal.jsx';
 import { ScrollControls } from './components/ScrollControls.jsx';
 import  {Certification } from'./components/Certification.jsx';
+import Cursor from "./components/cursor.jsx";
 
 export default function App() {
   const [isVideoOpen, setIsVideoOpen] = useState(false);
   const [videoSrc] = useState('https://www.youtube.com/embed/DWRcNpR6Kdc');
 
   return (
-    <div className="min-h-screen bg-white text-gray-700 antialiased selection:bg-[#0BCEAF] selection:text-white">
+    <div className="min-h-screen text-gray-700 antialiased selection:bg-fuchsia-900 selection:text-white">
       {/* Sticky Fixed Navbar on Scroll */}
       <Navbar />
 
@@ -29,8 +30,7 @@ export default function App() {
       {/* About Section */}
       <AboutSection />
 
-      {/* Quality - Qualification Section (Education & Experience) */}
-      <QualificationSection />
+      
     
       {/* Skills Section with Progress Bar Waypoints */}
       <SkillsSection />
@@ -43,7 +43,8 @@ export default function App() {
       <PortfolioSection />
 
       
-
+{/* Quality - Qualification Section (Education & Experience) */}
+      <QualificationSection />
      
 
       {/* Contact Form Section */}

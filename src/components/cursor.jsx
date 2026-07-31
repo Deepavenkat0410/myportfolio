@@ -14,7 +14,7 @@ export default function Cursor() {
     <motion.div
       animate={{
         x: mouse.x - 10,
-        y: mouse.y - 10,
+        y: mouse.y - 30,
       }}
       transition={{ type: "spring", stiffness: 500, damping: 30 }}
       style={{
